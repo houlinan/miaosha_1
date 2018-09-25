@@ -1,6 +1,7 @@
 package cn.hgxsp.miaosha_1.dao;
 
 import cn.hgxsp.miaosha_1.Domain.User;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -15,5 +16,8 @@ import org.apache.ibatis.annotations.Select;
 public interface UserDao {
 
     @Select("select * from user where id = #{id}")
-    public User getById(@Param("id") int id) ;
+    User getById(@Param("id") int id) ;
+
+    @Insert("insert into user (id , username) values(#{id} , #{username})")
+    int insert(User user) ;
 }

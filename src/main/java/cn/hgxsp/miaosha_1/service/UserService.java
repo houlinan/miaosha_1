@@ -20,4 +20,9 @@ public class UserService {
     public User getById(int id){
         return userDao.getById(id) ;
     }
+
+
+    public int add(User user) {
+        return userDao.insert(user) ;
+    }
 }

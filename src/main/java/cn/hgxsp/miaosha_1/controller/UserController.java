@@ -25,4 +25,12 @@ public class UserController {
     public Result<User> getById(){
         return Result.success(userService.getById(0));
     }
+
+    @GetMapping("/add")
+    public void add(){
+        User user = new User();
+        user.setId(1);
+        user.setUsername("houlinan");
+        userService.add(user );
+    }
 }
