@@ -33,7 +33,7 @@ public class MD5Util {
     }
 
     public static void main(String[] args) {
-        System.out.println(fromPass2DBPass("houlinan" , "256d4sa86c4"));
+        System.out.println(fromPass2DBPass("admin" , "256d4sa86c4"));
     }
 
 

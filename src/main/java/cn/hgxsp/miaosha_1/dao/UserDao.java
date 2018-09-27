@@ -20,4 +20,8 @@ public interface UserDao {
 
     @Insert("insert into user (id , username) values(#{id} , #{username})")
     int insert(User user) ;
+
+    @Select("Select * from user where username = #{username}")
+    User getByName(@Param("username") String username) ;
+
 }

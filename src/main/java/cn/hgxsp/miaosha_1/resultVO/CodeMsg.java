@@ -27,5 +27,8 @@ public class CodeMsg {
 
     public static CodeMsg success = new CodeMsg("成功" , 0 );
 
+    /** 用户登陆类错误  -- 5001xx  */
+    public static CodeMsg USER_IS_EMPTY = new CodeMsg("用户对象为空" , 500100 );
+    public static CodeMsg USER_LOGIN_MOBLIE_IS_EMPYT = new CodeMsg("用户传入手机为空" , 500101 );
 
 }
