@@ -30,5 +30,7 @@ public class CodeMsg {
     /** 用户登陆类错误  -- 5001xx  */
     public static CodeMsg USER_IS_EMPTY = new CodeMsg("用户对象为空" , 500100 );
     public static CodeMsg USER_LOGIN_MOBLIE_IS_EMPYT = new CodeMsg("用户传入手机为空" , 500101 );
+    public static CodeMsg USER_PASSWORD_IS_EMPTY = new CodeMsg("用户传入密码为空" , 500102 );
+    public static CodeMsg USERNAME_OR_PASSWORD_ERROR = new CodeMsg("用户账号或者密码错误" , 500103 );
 
 }
