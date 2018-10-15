@@ -23,7 +23,7 @@ public abstract class BasePrifix implements KeyPrefix {
 
     @Override
     public int expireSecondS() {
-        return 0;
+        return this.expireSecondS;
     }
 
     @Override

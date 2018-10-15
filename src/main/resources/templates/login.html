@@ -61,7 +61,7 @@
 </body>
 <script>
 
-alert(md5("1"));
+<!--alert(md5("1"));-->
 function login(){
 	$("#loginForm").validate({
         submitHandler:function(form){
@@ -74,11 +74,12 @@ function doLogin(){
 	
 	var inputPass = $("#password").val();
 	var SALT = g_passsword_salt;
-	var str = "" + SALT.charAt(5) + SALT.charAt(5) +SALT.charAt(8) +
-	SALT.charAt(10) + SALT.charAt(2)+ inputPass + SALT.charAt(6) +
-	 SALT.charAt(11)+ SALT.charAt(1);
-	var password = md5(str);
-    alert(password);
+	<!--var str = "" + SALT.charAt(5) + SALT.charAt(5) +SALT.charAt(8) +-->
+	<!--SALT.charAt(10) + SALT.charAt(2)+ inputPass + SALT.charAt(6) +-->
+	 <!--SALT.charAt(11)+ SALT.charAt(1);-->
+	<!--var password = md5(str);-->
+	password = inputPass ;
+
 	var mobile = $("#mobile").val();
 	$.ajax({
 		url: "/login/do_login",

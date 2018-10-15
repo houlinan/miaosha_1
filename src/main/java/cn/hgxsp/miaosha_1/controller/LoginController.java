@@ -1,20 +1,30 @@
 package cn.hgxsp.miaosha_1.controller;
 
 import cn.hgxsp.miaosha_1.Domain.User;
+import cn.hgxsp.miaosha_1.exception.GlobleException;
+import cn.hgxsp.miaosha_1.redis.MiaoShaUserKey;
+import cn.hgxsp.miaosha_1.redis.RedisService;
 import cn.hgxsp.miaosha_1.resultVO.CodeMsg;
 import cn.hgxsp.miaosha_1.resultVO.LoginVO;
 import cn.hgxsp.miaosha_1.resultVO.Result;
 import cn.hgxsp.miaosha_1.service.UserService;
 import cn.hgxsp.miaosha_1.utils.MD5Util;
+import cn.hgxsp.miaosha_1.utils.UUIDUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
+import java.util.UUID;
 
 /**
  * DESC：用户登陆controller层
@@ -30,31 +40,44 @@ public class LoginController {
     @Autowired
     UserService userService;
 
+    @Autowired
+    RedisService redisService ;
+
     @RequestMapping("/to_login")
     public String toLogin() {
+        System.out.println(MiaoShaUserKey.token.expireSecondS());
         return "login";
     }
 
     @PostMapping(value = "/do_login")
     @ResponseBody
-    public Result doLogin(LoginVO loginVO) {
+    public Result doLogin(HttpServletResponse response, @Valid LoginVO loginVO) {
 
-        if (ObjectUtils.isEmpty(loginVO)) return Result.error(CodeMsg.USER_IS_EMPTY);
+        if (ObjectUtils.isEmpty(loginVO)) throw new GlobleException(CodeMsg.USERNAME_OR_PASSWORD_ERROR);
 
         String mobile = loginVO.getMobile();
-        if (StringUtils.isEmpty(mobile)) return Result.error(CodeMsg.USER_LOGIN_MOBLIE_IS_EMPYT);
 
         String password = loginVO.getPassword();
-        log.info("用户传送进来的密码为：{}", password) ;
-        if (StringUtils.isEmpty(password)) return Result.error(CodeMsg.USER_PASSWORD_IS_EMPTY);
+//        log.info("用户传送进来的密码为：{}", password) ;
 
         User user = userService.findUserByName(mobile);
-        if (ObjectUtils.isEmpty(user)) return Result.error(CodeMsg.USERNAME_OR_PASSWORD_ERROR);
+        if (ObjectUtils.isEmpty(user)) throw new GlobleException(CodeMsg.USERNAME_OR_PASSWORD_ERROR);
 
-        String userInputPWDtoDBPWD = MD5Util.serverPass2DBPass(password, user.getSalt());
-        log.info("用户登陆后的密码为：{}"  ,userInputPWDtoDBPWD);
-        log.info("用户的盐为：{}" , user.getSalt());
-        if (!userInputPWDtoDBPWD.equals(user.getPassword())) return Result.error(CodeMsg.USERNAME_OR_PASSWORD_ERROR);
+//        String userInputPWDtoDBPWD = MD5Util.serverPass2DBPass(password, user.getSalt());
+        String userInputPWDtoDBPWD = password ;
+//        log.info("用户登陆后的密码为：{}"  ,userInputPWDtoDBPWD);
+//        log.info("用户的盐为：{}" , user.getSalt());
+        if (!userInputPWDtoDBPWD.equals(user.getPassword()))
+            throw new GlobleException(CodeMsg.USERNAME_OR_PASSWORD_ERROR);
+
+        //  登陆成功后session的处理
+        //生成 cookie
+        String token = UUIDUtils.getUUID() ;
+        redisService.set(MiaoShaUserKey.token , token , user) ;
+        Cookie cookie = new Cookie(MiaoShaUserKey.COOKIE_NAME_TOKEN , token );
+        cookie.setMaxAge(MiaoShaUserKey.token.expireSecondS());
+        cookie.setPath("/");
+        response.addCookie(cookie);
 
         return Result.success(user);
     }
