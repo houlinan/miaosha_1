@@ -20,4 +20,5 @@ public class User {
     private Date registerDate ;
     private Date lastLoginDate ;
     private Integer loginCount ;
+    private String nickName ;
 }

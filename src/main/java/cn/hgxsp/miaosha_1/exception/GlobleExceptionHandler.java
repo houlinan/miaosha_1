@@ -37,6 +37,7 @@ public class GlobleExceptionHandler {
 
             return Result.error(CodeMsg.BIND_ERROR.fillArge(defaultMessage)) ;
         }else{
+            e.getStackTrace();
             return Result.error(CodeMsg.SERVER_ERROR);
         }
     }
