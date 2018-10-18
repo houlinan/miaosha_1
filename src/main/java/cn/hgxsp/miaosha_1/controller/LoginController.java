@@ -2,7 +2,6 @@ package cn.hgxsp.miaosha_1.controller;
 
 import cn.hgxsp.miaosha_1.Domain.User;
 import cn.hgxsp.miaosha_1.exception.GlobleException;
-import cn.hgxsp.miaosha_1.redis.MiaoShaUserKey;
 import cn.hgxsp.miaosha_1.redis.RedisService;
 import cn.hgxsp.miaosha_1.resultVO.CodeMsg;
 import cn.hgxsp.miaosha_1.resultVO.LoginVO;
@@ -13,12 +12,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.ObjectUtils;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
