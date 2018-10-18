@@ -41,7 +41,6 @@ public class LoginController {
 
     @RequestMapping("/to_login")
     public String toLogin() {
-        System.out.println(MiaoShaUserKey.token.expireSecondS());
         return "login";
     }
 

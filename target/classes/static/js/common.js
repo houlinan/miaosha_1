@@ -4,4 +4,4 @@ function g_showLoading(){
 	return idx;
 }
 //salt
-var g_passsword_salt= "nsuia@$9802nmcdls(*$()@!m";
+var g_passsword_salt="1a2b3c4d"
