@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9ddc802-c00a-4de0-969e-960304348038" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/controller/GoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/controller/GoodController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/dao/GoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/dao/GoodsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/resultVO/CodeMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/resultVO/CodeMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/service/GoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/service/GoodsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/service/OrderService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -86,7 +81,7 @@
         <counts>
           <entry key="class" value="3" />
           <entry key="html" value="2" />
-          <entry key="java" value="28" />
+          <entry key="java" value="30" />
           <entry key="properties" value="1" />
           <entry key="xml" value="1" />
         </counts>
@@ -95,7 +90,7 @@
         <counts>
           <entry key="CLASS" value="3" />
           <entry key="HTML" value="2" />
-          <entry key="JAVA" value="28" />
+          <entry key="JAVA" value="30" />
           <entry key="Properties" value="1" />
           <entry key="XML" value="1" />
         </counts>
@@ -104,7 +99,7 @@
         <counts>
           <entry key="class" value="5" />
           <entry key="html" value="10" />
-          <entry key="java" value="1923" />
+          <entry key="java" value="1933" />
           <entry key="properties" value="15" />
           <entry key="xml" value="1" />
         </counts>
@@ -113,7 +108,7 @@
         <counts>
           <entry key="CLASS" value="5" />
           <entry key="HTML" value="10" />
-          <entry key="JAVA" value="1923" />
+          <entry key="JAVA" value="1933" />
           <entry key="Properties" value="15" />
           <entry key="XML" value="1" />
         </counts>
@@ -161,10 +156,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/goods_detail.html">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/dao/GoodsDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="41" column="77" selection-start-line="41" selection-start-column="64" selection-end-line="41" selection-end-column="77" />
+            <state relative-caret-position="448">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/service/GoodsService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -172,8 +182,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/controller/GoodController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="37" column="31" lean-forward="true" selection-start-line="30" selection-start-column="3" selection-end-line="37" selection-end-column="31" />
+            <state relative-caret-position="1372">
+              <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/goods_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="840">
+              <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/resultVO/GoodsVO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -181,20 +212,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/controller/MiaoshaController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="66" column="66" lean-forward="true" selection-start-line="66" selection-start-column="66" selection-end-line="66" selection-end-column="66" />
+            <state relative-caret-position="212">
+              <caret line="66" column="64" lean-forward="true" selection-start-line="66" selection-start-column="64" selection-end-line="66" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/service/MiaoshaService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -202,20 +224,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/service/OrderService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+            <state relative-caret-position="532">
+              <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/resultVO/CodeMsg.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="45" column="89" selection-start-line="45" selection-start-column="89" selection-end-line="45" selection-end-column="89" />
             </state>
           </provider>
         </entry>
@@ -376,8 +389,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -418,15 +431,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="miaosha_1" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="miaosha_1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="miaosha_1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="miaosha_1" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -434,32 +438,7 @@
               <item name="miaosha_1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="miaosha_1" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="miaosha_1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="miaosha_1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="miaosha_1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="miaosha_1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="miaosha_1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="miaosha_1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -615,7 +594,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75279000" />
+    <option name="totallyTimeSpent" value="75905000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -630,7 +609,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14507495" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23875803" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -919,7 +898,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/resultVO/GoodsVO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
+        <state relative-caret-position="448">
           <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -957,8 +936,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/dao/GoodsDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        <state relative-caret-position="448">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -984,8 +963,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/service/GoodsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+        <state relative-caret-position="448">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -994,8 +973,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/goods_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="32" column="49" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="49" />
+        <state relative-caret-position="840">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1008,8 +987,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/controller/GoodController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="37" column="31" lean-forward="true" selection-start-line="30" selection-start-column="3" selection-end-line="37" selection-end-column="31" />
+        <state relative-caret-position="1372">
+          <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1029,8 +1008,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/controller/MiaoshaController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="66" column="66" lean-forward="true" selection-start-line="66" selection-start-column="66" selection-end-line="66" selection-end-column="66" />
+        <state relative-caret-position="212">
+          <caret line="66" column="64" lean-forward="true" selection-start-line="66" selection-start-column="64" selection-end-line="66" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1039,8 +1018,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/hgxsp/miaosha_1/service/OrderService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        <state relative-caret-position="532">
+          <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
