@@ -1,8 +1,8 @@
 package cn.hgxsp.miaosha_1.dao;
 
 import cn.hgxsp.miaosha_1.Domain.MiaoshaOrder;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import cn.hgxsp.miaosha_1.Domain.OrderInfo;
+import org.apache.ibatis.annotations.*;
 
 /**
  * DESC：订单DAO层
@@ -13,6 +13,16 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface OrderDao {
 
-    @Select("")
-    MiaoshaOrder getMiaoshaoOrderByUserIdAndGoodsId(Integer id, Long goodsId) ;
+    @Select("select * from miaosha_order where user_id = #{userId} and goods_id = #{goodsId}")
+    MiaoshaOrder getMiaoshaoOrderByUserIdAndGoodsId(@Param("userId") Integer id,@Param("goodsId") Long goodsId) ;
+
+    @Insert("insert into order_info(user_id ,goods_id , goods_name , goods_count , goods_price , order_channel, status ,create_date" +
+            ")values (#{userId} , #{goodsId}, #{goodsName}, #{goodsCount}, #{goodsPrice}, #{orderChannel}," +
+            "#{status} , #{createDate})")
+    @SelectKey(keyColumn = "id" , keyProperty = "id" , resultType = int.class , before = false,
+    statement = "select last_insert_id()")
+    int insert(OrderInfo order);
+
+    @Insert("insert into miaosha_order(user_id , goods_id , order_id)values(#{userId} , #{goodsId} , #{orderId})")
+    int insertMiaoshaOrder(MiaoshaOrder miaoshaOrder);
 }
