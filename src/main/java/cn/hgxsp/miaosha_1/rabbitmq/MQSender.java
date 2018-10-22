@@ -20,7 +20,7 @@ public class MQSender {
 
     public void send(Object object){
         String msg = RedisService.beanToString(object) ;
-        amqpTemplate.convertAndSend(MQConfig.QUEUENAME , msg);
+        amqpTemplate.convertAndSend(MQConfig.DIRECTQUEUENAME , msg);
     }
 
 }

@@ -14,8 +14,12 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class MQReceiver {
 
-    @RabbitListener(queues = MQConfig.QUEUENAME)
+
+    @RabbitListener(queues = MQConfig.DIRECTQUEUENAME)
     public void receive(String msg){
       log.info("receive message = " + msg);
     }
+
+
+
 }

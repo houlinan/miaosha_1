@@ -47,6 +47,8 @@ public class DemoController {
 
     }
 
+    @GetMapping("/sendMQ")
+    @ResponseBody
     public Result<String> mq(){
         mqSender.send("雯雯是个大笨蛋");
         return Result.success("");
