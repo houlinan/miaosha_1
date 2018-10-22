@@ -4,6 +4,7 @@ import cn.hgxsp.miaosha_1.Domain.User;
 import cn.hgxsp.miaosha_1.dao.UserDao;
 import cn.hgxsp.miaosha_1.redis.MiaoShaUserKey;
 import cn.hgxsp.miaosha_1.redis.RedisService;
+import cn.hgxsp.miaosha_1.redis.UserKey;
 import cn.hgxsp.miaosha_1.utils.UUIDUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,13 @@ public class UserService {
     *@return:  cn.hgxsp.miaosha_1.Domain.User
     */
     public User getById(int id){
-        return userDao.getById(id) ;
+
+        User user = redisService.get(UserKey.getReidsById, "" + id, User.class);
+        if(!ObjectUtils.isEmpty(user)) return user ;
+        user = userDao.getById(id) ;
+        if(!ObjectUtils.isEmpty(user))   redisService.set(UserKey.getReidsById, "" + id, user) ;
+
+        return user ;
     }
 
 

@@ -1,4 +1,5 @@
 package cn.hgxsp.miaosha_1.service;
+import java.util.Date;
 
 import cn.hgxsp.miaosha_1.dao.GoodsDao;
 import cn.hgxsp.miaosha_1.resultVO.GoodsVO;
@@ -26,5 +27,10 @@ public class GoodsService {
     public GoodsVO getGoodsById(long goodsId) {
         return goodsDao.getGoodsById(goodsId) ;
 
+    }
+
+    public int reduceStock(GoodsVO goodsVo) {
+
+        return  goodsDao.reduceStock(goodsVo.getId()) ;
     }
 }

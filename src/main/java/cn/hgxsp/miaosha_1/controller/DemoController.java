@@ -1,7 +1,9 @@
 package cn.hgxsp.miaosha_1.controller;
 
+import cn.hgxsp.miaosha_1.rabbitmq.MQSender;
 import cn.hgxsp.miaosha_1.redis.RedisService;
 import cn.hgxsp.miaosha_1.redis.UserKey;
+import cn.hgxsp.miaosha_1.resultVO.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +25,9 @@ public class DemoController {
     @Autowired
     RedisService redisService ;
 
+    @Autowired
+    MQSender mqSender ;
+
     @RequestMapping("/thymeleaf")
     public String thymeleaf(Model model){
         model.addAttribute("name" , "houlinan") ;
@@ -40,5 +45,10 @@ public class DemoController {
     public String getRedisKey(String key ){
        return redisService.get(UserKey.getById  , key ,String.class);
 
+    }
+
+    public Result<String> mq(){
+        mqSender.send("雯雯是个大笨蛋");
+        return Result.success("");
     }
 }

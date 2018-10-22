@@ -133,7 +133,7 @@ public class RedisService {
     *@param:  [value]
     *@return:  java.lang.String
     */
-    private <T> String beanToString(T value) {
+    public static  <T> String beanToString(T value) {
         if(value == null ) return null ;
         Class<?> aClass = value.getClass();
         if(aClass == int.class || aClass == Integer.class) return "" + value ;
@@ -163,7 +163,7 @@ public class RedisService {
     *@param:  [strValue, clazz]
     *@return:  T
     */
-    private <T> T stringToBean(String strValue , Class<T> clazz){
+    public static  <T> T stringToBean(String strValue , Class<T> clazz){
 
         if(StringUtils.isEmpty(strValue) || StringUtils.isEmpty(clazz)) return null ;
         if(clazz == int.class || clazz == Integer.class) return (T)Integer.valueOf(strValue) ;
